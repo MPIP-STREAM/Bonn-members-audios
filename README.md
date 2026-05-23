@@ -1,6 +1,6 @@
 # Bonn Members Audios
 
-A simple GitHub Pages site where members of the Bonn group can hear how each other pronounces their names.
+A simple GitHub Pages site where members of the Bonn group can hear how each other pronounces their own names.
 
 ## 🔊 Live Site
 
@@ -18,7 +18,7 @@ Visit the page at: **https://mpip-stream.github.io/Bonn-members-audios/**
 ## ➕ Adding a New Member
 
 1. Record a short audio clip of yourself pronouncing your name (`.mp3` or `.wav`).
-2. Name the file using your first name in lowercase, e.g. `anna.mp3`.
+2. Name the file using your first and last name in lowercase, e.g. `anna_bonn.mp3`.
 3. Place the file in the `audios/` folder.
 4. Add a row for yourself in `names.md`.
 5. Open a pull request — the site updates automatically once merged.
