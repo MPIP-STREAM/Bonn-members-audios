@@ -10,6 +10,7 @@ This file lists the members of the Bonn group together with the audio file that 
 | Laurie Gangloff | [Laurie Gangloff.ogg](audios/laurie_gangloff.ogg) |
 | Lei Gao   |  [Lei Gao](audios/lei_gao.ogg)|   
 | Maksim Grechko| [Maksim Grechko](audios/maksim_grechko.ogg)|    
+| Peiyao Wang | [Peiyao_wang](audios/peiyao_wang.m4a)|
 | Xiaomin Liu | [Xiaomin_Liu](audios/xiaomin_liu.ogg)|
 | Yair Litman    | [Yair_Litman.ogg](audios/yair_litman.ogg) |
 | Yongkang Wang |[Yongkang_Wang](audios/yongkang_wang.ogg)|
