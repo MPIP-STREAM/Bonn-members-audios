@@ -191,7 +191,7 @@
   </div>
 
   <div class="card" data-name="Xiaomin Liu">
-    <span class="name">Xiaomin Liu </span>
+    <span class="name">Xiaomin Liu</span>
     <button class="play-btn" data-src="audios/xiaomin_liu.ogg" aria-label="Play Xiaomin Liu"></button>
   </div>
 
@@ -298,7 +298,7 @@
     let visible = 0;
 
     cards.forEach(card => {
-      const match = card.dataset.name.includes(query);
+      const match = card.dataset.name.toLowerCase().includes(query);
       card.style.display = match ? '' : 'none';
       if (match) visible++;
     });
