@@ -14,5 +14,6 @@ This file lists the members of the Bonn group together with the audio file that 
 | Xiaomin Liu | [Xiaomin_Liu](audios/xiaomin_liu.ogg)|
 | Yair Litman    | [Yair_Litman.ogg](audios/yair_litman.ogg) |
 | Yongkang Wang |[Yongkang_Wang](audios/yongkang_wang.ogg)|
+| Paul Idzko | [Paul_Idzko](audios/paul_idzko.mp3)|
 
 > **How to add yourself:** record a short clip of your name, add the file to `audios/`, and add a row to this table.
