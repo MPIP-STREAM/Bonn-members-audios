@@ -9,6 +9,7 @@ This file lists the members of the Bonn group together with the audio file that 
 | Daniel Keefer  | [Daniel_Keefer.ogg](audios/daniel_keefer.ogg) |
 | Ilia Kichev  | [Ilia_Kichev](audios/ilia_kichev.mp3)|
 | Johannes Hunger | [Johannes Hunger](audios/johannes_hunger.ogg) |
+| Kaifa Xinv  | [Kaifa_Xin](audios/kaifa_xin.m4a)|
 | Laurie Gangloff | [Laurie Gangloff.ogg](audios/laurie_gangloff.ogg) |
 | Lei Gao   |  [Lei Gao](audios/lei_gao.ogg)|   
 | Maksim Grechko| [Maksim Grechko](audios/maksim_grechko.ogg)|    
