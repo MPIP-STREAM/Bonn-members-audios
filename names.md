@@ -8,6 +8,7 @@ This file lists the members of the Bonn group together with the audio file that 
 | Beate Schiewe | [Beate_Schiewe](audios/beate_schiewe.ogg) |
 | Daniel Keefer  | [Daniel_Keefer.ogg](audios/daniel_keefer.ogg) |
 | Fumiki Matsumura| [Fumiki_Matsumura](audios/fumiki_matsumura.m4a)|   
+| Hansjörg Menges| [Hansjoerg_Menges](audios/hansjoerg_menges.mp3)|
 | Ilia Kichev  | [Ilia_Kichev](audios/ilia_kichev.mp3)|
 | Johannes Hunger | [Johannes Hunger](audios/johannes_hunger.ogg) |
 | Kaifa Xinv  | [Kaifa_Xin](audios/kaifa_xin.m4a)|
