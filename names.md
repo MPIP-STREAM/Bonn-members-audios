@@ -5,6 +5,7 @@ This file lists the members of the Bonn group together with the audio file that 
 | Name | Audio file |
 |------|-----------|
 | Ali Esfandiar| [Ali Esfandiar](audios/ali_esfandiar.ogg)|
+| Arsh Hazra | [Arsh Hazra](audios/arsh_hazra.ogg) |
 | Beate Schiewe | [Beate_Schiewe](audios/beate_schiewe.ogg) |
 | Daniel Keefer  | [Daniel_Keefer.ogg](audios/daniel_keefer.ogg) |
 | Fumiki Matsumura| [Fumiki_Matsumura](audios/fumiki_matsumura.m4a)|   
@@ -20,12 +21,13 @@ This file lists the members of the Bonn group together with the audio file that 
 | Paul Idzko | [Paul_Idzko](audios/paul_idzko.mp3)|
 | Peiyao Wang | [Peiyao_wang](audios/peiyao_wang.m4a)|
 | Qiqi Yang | [Qiqi_Yang](audios/qiqi_yang.mp4)|
+| Runda Li | [Runda Li](audios/runda_li.m4a) |
 | Shengjie Qian| [Shengjie_Qian](audios/shengjie_qian.m4a)|
 | Xiaomin Liu | [Xiaomin_Liu](audios/xiaomin_liu.ogg)|
 | Yair Litman    | [Yair_Litman.ogg](audios/yair_litman.ogg) |
 | Yongkang Wang |[Yongkang_Wang](audios/yongkang_wang.ogg)|
-
 | Yu Han | [Yu_Han](audios/yu_han.m4a)|
+| Yucong Chen | [Yucong Chen](audios/yucong_chen.m4a) |
 
 > **How to add yourself:** record a short clip of your name, add the file to `audios/`, and add a row to this table.
 
