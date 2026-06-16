@@ -5,7 +5,7 @@ This file lists the members of the Bonn group together with the audio file that 
 | Name | Audio file |
 |------|-----------|
 | Ali Esfandiar| [Ali Esfandiar](audios/ali_esfandiar.ogg)|
-| Arsh Hazra | [Arsh Hazra](audios/arsh_hazra.ogg) |
+| Arsh Hazrah | [Arsh Hazra](audios/arsh_hazrah.ogg) |
 | Beate Schiewe | [Beate_Schiewe](audios/beate_schiewe.ogg) |
 | Daniel Keefer  | [Daniel_Keefer.ogg](audios/daniel_keefer.ogg) |
 | Fumiki Matsumura| [Fumiki_Matsumura](audios/fumiki_matsumura.m4a)|   
