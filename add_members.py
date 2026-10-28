@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Interactive helper to publish name-pronunciation audios.
 
-Walks every audio file in ``to_upload/`` and, for each one:
+Walks every audio file in ``to_add/`` and ``to_upload/`` (or the directories
+given as arguments) and, for each one:
   1. asks for the member's display name (a sensible default is derived from
-     the filename, e.g. ``runda_li.m4a`` -> ``Runda Li``);
-  2. moves the file into ``audios/`` (keeping the original filename);
+     the filename, e.g. ``runda_li.m4a`` or ``Runda Li.m4a`` -> ``Runda Li``);
+  2. moves the file into ``audios/``, renamed to ``firstname_lastname.ext``
+     (lowercase, ASCII, e.g. ``Hansjörg Menges.mp3`` -> ``hansjoerg_menges.mp3``);
   3. inserts an alphabetically-placed (by first name) card in ``index.html``
      and a row in ``names.md``.
 
@@ -13,13 +15,15 @@ Nothing is staged or committed -- review the changes yourself afterwards.
 
 from __future__ import annotations
 
+import html
 import re
 import sys
+import unicodedata
 from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent
-TO_UPLOAD = REPO / "to_upload"
+STAGING_DIRS = [REPO / "to_add", REPO / "to_upload"]
 AUDIOS = REPO / "audios"
 INDEX_HTML = REPO / "index.html"
 NAMES_MD = REPO / "names.md"
@@ -41,6 +45,16 @@ def first_name_key(display_name: str) -> str:
 def default_display_name(filename_stem: str) -> str:
     """``runda_li`` -> ``Runda Li``."""
     return " ".join(word.capitalize() for word in re.split(r"[_\s]+", filename_stem) if word)
+
+
+def audio_filename_for(display_name: str, suffix: str) -> str:
+    """``Hansjörg Menges`` + ``.MP3`` -> ``hansjoerg_menges.mp3``."""
+    text = display_name.lower()
+    for umlaut, repl in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss")):
+        text = text.replace(umlaut, repl)
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    stem = "_".join(re.findall(r"[a-z0-9]+", text))
+    return f"{stem}{suffix.lower()}"
 
 
 def prompt(text: str, default: str) -> str:
@@ -68,11 +82,12 @@ def insert_index_card(name: str, audio_filename: str) -> None:
     lines = INDEX_HTML.read_text(encoding="utf-8").splitlines(keepends=True)
     new_key = first_name_key(name)
 
+    esc = html.escape(name)
     card = (
-        f'  <div class="card" data-name="{name}">\n'
-        f'    <span class="name">{name}</span>\n'
+        f'  <div class="card" data-name="{esc}">\n'
+        f'    <span class="name">{esc}</span>\n'
         f'    <button class="play-btn" data-src="audios/{audio_filename}" '
-        f'aria-label="Play {name}"></button>\n'
+        f'aria-label="Play {esc}"></button>\n'
         f"  </div>\n\n"
     )
 
@@ -87,7 +102,7 @@ def insert_index_card(name: str, audio_filename: str) -> None:
                 span = re.search(r'<span class="name">([^<]*)</span>', lines[i + 1])
                 if span:
                     existing = span.group(1)
-            if first_name_key(existing) > new_key:
+            if first_name_key(html.unescape(existing)) > new_key:
                 insert_at = i
                 break
 
@@ -163,22 +178,28 @@ def bump_footer() -> str | None:
 
 
 def main() -> int:
-    if not TO_UPLOAD.is_dir():
-        print(f"No to_upload/ directory found at {TO_UPLOAD}", file=sys.stderr)
+    if len(sys.argv) > 1:
+        staging_dirs = [Path(arg).resolve() for arg in sys.argv[1:]]
+    else:
+        staging_dirs = STAGING_DIRS
+    staging_dirs = [d for d in staging_dirs if d.is_dir()]
+    if not staging_dirs:
+        print("No staging directory found (looked for to_add/ and to_upload/)", file=sys.stderr)
         return 1
+    where = ", ".join(f"{d.name}/" for d in staging_dirs)
 
     AUDIOS.mkdir(exist_ok=True)
 
     candidates = sorted(
-        p for p in TO_UPLOAD.iterdir()
+        p for d in staging_dirs for p in d.iterdir()
         if p.is_file() and p.suffix.lower() in AUDIO_EXTS
     )
 
     if not candidates:
-        print("Nothing to do: no audio files in to_upload/.")
+        print(f"Nothing to do: no audio files in {where}.")
         return 0
 
-    print(f"Found {len(candidates)} audio file(s) in to_upload/.\n")
+    print(f"Found {len(candidates)} audio file(s) in {where}.\n")
     added = 0
 
     for src in candidates:
@@ -188,9 +209,9 @@ def main() -> int:
             print("  Skipped (empty name).\n")
             continue
 
-        dest = AUDIOS / src.name
+        dest = AUDIOS / audio_filename_for(name, src.suffix)
         if dest.exists():
-            if not ask_yes_no(f"  audios/{src.name} already exists. Overwrite?"):
+            if not ask_yes_no(f"  audios/{dest.name} already exists. Overwrite?"):
                 print("  Skipped.\n")
                 continue
 

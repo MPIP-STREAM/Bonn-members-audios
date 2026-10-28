@@ -28,6 +28,7 @@ This file lists the members of the Bonn group together with the audio file that 
 | Yongkang Wang |[Yongkang_Wang](audios/yongkang_wang.ogg)|
 | Yu Han | [Yu_Han](audios/yu_han.m4a)|
 | Yucong Chen | [Yucong Chen](audios/yucong_chen.m4a) |
+| Zhibo Jiang | [Zhibo Jiang](audios/zhibo_jiang.m4a) |
 
 > **How to add yourself:** record a short clip of your name, add the file to `audios/`, and add a row to this table.
 

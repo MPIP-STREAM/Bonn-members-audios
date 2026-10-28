@@ -12,10 +12,10 @@ each name is pronounced. No build step, no dependencies, no framework — just o
 
 ```
 audios/         # one audio clip per person, named firstname_lastname.ext
-to_upload/      # staging area: drop new clips here, then run add_members.py
+to_add/         # staging area (to_upload/ also works): drop new clips here, then run add_members.py
 index.html      # the whole site: HTML + inline CSS + inline JS audio player
 names.md        # markdown table mirroring the member list
-add_members.py  # interactive helper to publish clips from to_upload/
+add_members.py  # interactive helper to publish clips from to_add/ or to_upload/
 README.md       # human-facing instructions
 ```
 
@@ -51,8 +51,8 @@ There are three places a member is represented and they must stay in sync:
 python3 add_members.py
 ```
 
-For every audio file in `to_upload/` it: prompts for a display name (default
-derived from the filename), moves the file into `audios/`, inserts an
+For every audio file in `to_add/` and `to_upload/` (or directories passed as arguments) it: prompts for a display name (default
+derived from the filename), moves the file into `audios/` renamed to `firstname_lastname.ext` (lowercase ASCII, umlauts → ae/oe/ue), inserts an
 alphabetically-placed card + names.md row, and patch-bumps the footer
 version/date. It leaves all changes **unstaged** for review — it does not
 `git add` or commit. Skips non-audio files and asks before overwriting.
