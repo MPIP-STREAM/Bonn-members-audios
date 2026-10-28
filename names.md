@@ -16,6 +16,7 @@ This file lists the members of the Bonn group together with the audio file that 
 | Laurie Gangloff | [Laurie Gangloff.ogg](audios/laurie_gangloff.ogg) |
 | Lei Gao   |  [Lei Gao](audios/lei_gao.ogg)|   
 | Maksim Grechko| [Maksim Grechko](audios/maksim_grechko.ogg)|    
+| Martina Knecht | [Martina Knecht](audios/martina_knecht.mp3) |
 | Matthias Baumann| [Ilia_Baumann](audios/matthias_baumann.aac)|   
 | Mengdie Hou| [Mengdie Hou](audios/mengdie_hou.m4a)|   
 | Paul Idzko | [Paul_Idzko](audios/paul_idzko.mp3)|
